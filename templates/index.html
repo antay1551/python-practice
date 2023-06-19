@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Glitch project</title>
+	<style>
+        .chart {
+            max-width: 4500px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+	<h1>Tolok Anton</h1>
+	<h1>Task number 17</h1>
+	<h2>Current time is {{ now }}</h2>
+    <h3>
+        Task: popularity (Popularity) of films depending on the duration (Length) of the dramatic genre (Subject=Drama)
+    </h3>
+  <div>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".csv">
+            <input type="submit" value="Upload">
+        </form>
+  </div>
+  <h1>Graphic</h1>
+  <div class="chart">
+        {% if chart_svg %}
+            {{ chart_svg|safe }}
+        {% else %}
+            <p>No data available</p>
+        {% endif %}		
+    </div>
+</body>
+</html>
